@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "exports": {
+    "SharpGCalendar.Models/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/SharpGCalendar.Models.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/SharpGCalendar.Models.dll": {}
+      }
+    },
+    "SharpGCalendar.Repository/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/SharpGCalendar.Repository.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/SharpGCalendar.Repository.dll": {}
+      }
+    }
+  }
+}
