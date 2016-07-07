@@ -1,13 +1,18 @@
 {
   "version": 2,
   "exports": {
-    "SharpGCalendar.Models/1.0.0": {
+    "SharpGCalendar.Domain/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
         "bin/Debug/SharpGCalendar.Models.dll": {}
       },
       "runtime": {
+        "../../packages/CommonServiceLocator.1.3/lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {},
+        "../../packages/Ensure.That.4.0.0/lib/net45/EnsureThat.dll": {},
+        "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.Configuration.dll": {},
+        "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.RegistrationByConvention.dll": {},
+        "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.dll": {},
         "bin/Debug/SharpGCalendar.Models.dll": {}
       }
     },

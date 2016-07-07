@@ -12,9 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SharpGCalendar.Api", "backend-app\SharpGCalendar.Api\SharpGCalendar.Api.xproj", "{92A01551-A8CA-4E25-B91F-F238208CE871}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpGCalendar.Models", "backend-app\SharpGCalendar.Models\SharpGCalendar.Models.csproj", "{63C3CBE1-93C9-4475-9789-CEBA8A59EA44}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpGCalendar.Domain", "backend-app\SharpGCalendar.Models\SharpGCalendar.Domain.csproj", "{63C3CBE1-93C9-4475-9789-CEBA8A59EA44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpGCalendar.Repository", "backend-app\SharpGCalendar.Repository\SharpGCalendar.Repository.csproj", "{58705634-76BC-454B-9B40-07D4A8AF02E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpGCalendar.Tests", "backend-app\SharpGCalendar.Tests\SharpGCalendar.Tests.csproj", "{4C3D24E0-8F12-4C6A-9006-F5ECF490996B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,6 +36,10 @@ Global
 		{58705634-76BC-454B-9B40-07D4A8AF02E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58705634-76BC-454B-9B40-07D4A8AF02E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58705634-76BC-454B-9B40-07D4A8AF02E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C3D24E0-8F12-4C6A-9006-F5ECF490996B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C3D24E0-8F12-4C6A-9006-F5ECF490996B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C3D24E0-8F12-4C6A-9006-F5ECF490996B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C3D24E0-8F12-4C6A-9006-F5ECF490996B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,5 +48,6 @@ Global
 		{92A01551-A8CA-4E25-B91F-F238208CE871} = {AC91A2EA-241C-4CD4-9EBF-AD1044DDC8D1}
 		{63C3CBE1-93C9-4475-9789-CEBA8A59EA44} = {AC91A2EA-241C-4CD4-9EBF-AD1044DDC8D1}
 		{58705634-76BC-454B-9B40-07D4A8AF02E0} = {AC91A2EA-241C-4CD4-9EBF-AD1044DDC8D1}
+		{4C3D24E0-8F12-4C6A-9006-F5ECF490996B} = {AC91A2EA-241C-4CD4-9EBF-AD1044DDC8D1}
 	EndGlobalSection
 EndGlobal
