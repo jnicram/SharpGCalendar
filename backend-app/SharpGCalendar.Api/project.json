@@ -22,9 +22,6 @@
   "frameworks": {
     "net452": {
       "dependencies": {
-        "SharpGCalendar.Domain": {
-          "target": "project"
-        },
         "SharpGCalendar.Repository": {
           "target": "project"
         }

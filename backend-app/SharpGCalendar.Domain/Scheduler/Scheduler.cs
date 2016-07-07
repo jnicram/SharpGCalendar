@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SharpGCalendar.Models.Scheduler
+namespace SharpGCalendar.Domain.Scheduler
 {
     public abstract class Scheduler : ISchedule
     {

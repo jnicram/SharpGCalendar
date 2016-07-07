@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
-using SharpGCalendar.Models.Scheduler;
-using SharpGCalendar.Models;
+using SharpGCalendar.Domain.Scheduler;
+using SharpGCalendar.Domain;
 using System.Linq;
 using System.Collections.Generic;
 

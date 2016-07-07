@@ -1,4 +1,4 @@
-﻿namespace SharpGCalendar.Models
+﻿namespace SharpGCalendar.Domain
 {
     public enum FrequencyPart
     {

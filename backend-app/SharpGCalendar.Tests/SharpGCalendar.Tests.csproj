@@ -61,7 +61,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharpGCalendar.Models\SharpGCalendar.Domain.csproj">
+    <ProjectReference Include="..\SharpGCalendar.Domain\SharpGCalendar.Domain.csproj">
       <Project>{63c3cbe1-93c9-4475-9789-ceba8a59ea44}</Project>
       <Name>SharpGCalendar.Domain</Name>
     </ProjectReference>

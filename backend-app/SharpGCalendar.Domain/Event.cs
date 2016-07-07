@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SharpGCalendar.Models
+namespace SharpGCalendar.Domain
 {
     public class Event
     {

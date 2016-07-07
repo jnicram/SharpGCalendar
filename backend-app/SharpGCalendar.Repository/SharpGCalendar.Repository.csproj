@@ -45,8 +45,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharpGCalendar.Models\SharpGCalendar.Domain.csproj">
-      <Project>{63C3CBE1-93C9-4475-9789-CEBA8A59EA44}</Project>
+    <ProjectReference Include="..\SharpGCalendar.Domain\SharpGCalendar.Domain.csproj">
+      <Project>{63c3cbe1-93c9-4475-9789-ceba8a59ea44}</Project>
       <Name>SharpGCalendar.Domain</Name>
     </ProjectReference>
   </ItemGroup>
