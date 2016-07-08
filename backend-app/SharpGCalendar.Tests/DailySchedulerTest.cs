@@ -17,6 +17,14 @@ namespace SharpGCalendar.Tests
         }
 
         [Test]
+        public void ShouldThrowsExceptionWhenIncorrectDatesGiven()
+        {
+            DailyScheduler scheduler = new DailyScheduler(FrequencyPart.None, 1);
+
+            Assert.Throws<ArgumentException>(() => scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 6, 8)));
+        }
+
+        [Test]
         public void ShouldReturnsOneEventInOneDayRange()
         {
             DailyScheduler scheduler = new DailyScheduler(FrequencyPart.None, 1);
