@@ -5,9 +5,10 @@ using SharpGCalendar.Domain;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace SharpGCalendar.Tests
+namespace SharpGCalendar.Scheduler.Tests
 {
     [TestFixture]
+    [Category("DailyScheduler")]
     public class DailySchedulerTest
     {
         [Test]
@@ -19,16 +20,15 @@ namespace SharpGCalendar.Tests
         [Test]
         public void ShouldThrowsExceptionWhenIncorrectDatesGiven()
         {
-            DailyScheduler scheduler = new DailyScheduler(FrequencyPart.None, 1);
+            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 1);
 
             Assert.Throws<ArgumentException>(() => scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 6, 8)));
         }
 
         [Test]
-        public void ShouldReturnsOneEventInOneDayRange()
+        public void ShouldReturnsOneDateInOneDayRange()
         {
-            DailyScheduler scheduler = new DailyScheduler(FrequencyPart.None, 1);
-
+            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 1);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 7, 8));
 
             Assert.AreEqual(1, occurrences.Count());
@@ -42,10 +42,9 @@ namespace SharpGCalendar.Tests
         }
 
         [Test]
-        public void ShouldReturnsTwoEventsInTwoDaysRange()
+        public void ShouldReturnsTwoDatesInTwoDaysRange()
         {
-            DailyScheduler scheduler = new DailyScheduler(FrequencyPart.None, 1);
-
+            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 1);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 7, 9));
 
             Assert.AreEqual(2, occurrences.Count());
@@ -60,10 +59,9 @@ namespace SharpGCalendar.Tests
         }
 
         [Test]
-        public void ShouldReturnsThreeEventsInDaysRangeWithThreeDaysInterval()
+        public void ShouldReturnsThreeDatesInDaysRangeWithThreeDaysInterval()
         {
-            DailyScheduler scheduler = new DailyScheduler(FrequencyPart.None, 3);
-
+            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 3);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 7, 15));
 
             Assert.AreEqual(3, occurrences.Count());

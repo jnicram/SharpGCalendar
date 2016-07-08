@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace SharpGCalendar.Domain.Scheduler
 {
-    public class DailyScheduler : Scheduler
+    public class YearlyScheduler : Scheduler
     {
-        public DailyScheduler(FrequencyPart frequencyPart, int interval) : base(frequencyPart, interval)
+        public YearlyScheduler(FrequencyPart frequencyPart, int interval) : base(frequencyPart, interval)
         {
         }
 
@@ -16,7 +16,7 @@ namespace SharpGCalendar.Domain.Scheduler
 
             List<DateTime> occurrences = new List<DateTime>();
 
-            for (DateTime dateTime = startDate; dateTime < endDate; dateTime = dateTime.AddDays(interval))
+            for (DateTime dateTime = startDate; dateTime < endDate; dateTime = dateTime.AddYears(interval))
             {
                 occurrences.Add(dateTime);
             }

@@ -15,7 +15,7 @@
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/SharpGCalendar.Models.dll": {}
+        "bin/Debug/SharpGCalendar.Domain.dll": {}
       },
       "runtime": {
         "../../packages/CommonServiceLocator.1.3/lib/portable-net4+sl5+netcore45+wpa81+wp8/Microsoft.Practices.ServiceLocation.dll": {},
@@ -23,7 +23,7 @@
         "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.Configuration.dll": {},
         "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.RegistrationByConvention.dll": {},
         "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.dll": {},
-        "bin/Debug/SharpGCalendar.Models.dll": {}
+        "bin/Debug/SharpGCalendar.Domain.dll": {}
       }
     }
   }
