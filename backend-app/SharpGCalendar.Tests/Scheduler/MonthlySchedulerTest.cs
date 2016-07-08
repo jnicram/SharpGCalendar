@@ -16,7 +16,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldReturnsDatesWithTheSameDayInJulyAndSeptember()
         {
-            ISchedule scheduler = new MonthlyScheduler(FrequencyPart.DayOfMonth, 2);
+            ISchedule scheduler = new MonthlyScheduler(RepeatFrequency.DayOfMonth, 2);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 11, 1));
 
             Assert.AreEqual(2, occurrences.Count());
@@ -33,7 +33,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldReturnsFirstThursdayInJulyAndSeptember()
         {
-            ISchedule scheduler = new MonthlyScheduler(FrequencyPart.DayOfWeek, 2);
+            ISchedule scheduler = new MonthlyScheduler(RepeatFrequency.DayOfWeek, 2);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 11, 1));
 
             Assert.AreEqual(2, occurrences.Count());

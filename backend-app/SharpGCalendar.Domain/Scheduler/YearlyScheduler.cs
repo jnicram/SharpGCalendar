@@ -6,7 +6,7 @@ namespace SharpGCalendar.Domain.Scheduler
 {
     public class YearlyScheduler : Scheduler
     {
-        public YearlyScheduler(int interval) : base(FrequencyPart.None, interval)
+        public YearlyScheduler(int interval) : base(RepeatFrequency.None, interval)
         {
         }
 

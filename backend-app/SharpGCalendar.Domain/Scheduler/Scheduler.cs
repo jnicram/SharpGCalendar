@@ -6,14 +6,14 @@ namespace SharpGCalendar.Domain.Scheduler
 {
     public abstract class Scheduler : ISchedule
     {
-        protected FrequencyPart frequencyPart;
+        protected RepeatFrequency repeatFrequency;
         protected int interval;
 
-        public Scheduler(FrequencyPart frequencyPart, int interval)
+        public Scheduler(RepeatFrequency repeatFrequency, int interval)
         {
             Ensure.That(() => interval).IsGte(1);
 
-            this.frequencyPart = frequencyPart;
+            this.repeatFrequency = repeatFrequency;
             this.interval = interval;
         }
 

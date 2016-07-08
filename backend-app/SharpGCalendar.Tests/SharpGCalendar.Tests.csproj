@@ -57,6 +57,7 @@
     <Compile Include="Scheduler\DailySchedulerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scheduler\MonthlySchedulerTest.cs" />
+    <Compile Include="Scheduler\WeeklySchedulerTest.cs" />
     <Compile Include="Scheduler\YearlySchedulerTest.cs" />
   </ItemGroup>
   <ItemGroup>
