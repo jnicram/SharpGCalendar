@@ -65,8 +65,10 @@
     <Compile Include="Frequency.cs" />
     <Compile Include="FrequencyPart.cs" />
     <Compile Include="Scheduler\DailyScheduler.cs" />
+    <Compile Include="Scheduler\DateTimeExtensions.cs" />
     <Compile Include="Scheduler\ISchedule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scheduler\MonthlyScheduler.cs" />
     <Compile Include="Scheduler\Scheduler.cs" />
     <Compile Include="Scheduler\YearlyScheduler.cs" />
   </ItemGroup>

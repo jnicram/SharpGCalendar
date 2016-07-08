@@ -14,7 +14,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldThrowsExceptionWhenIncorrectDatesGiven()
         {
-            ISchedule scheduler = new YearlyScheduler(FrequencyPart.None, 1);
+            ISchedule scheduler = new YearlyScheduler(1);
 
             Assert.Throws<ArgumentException>(() => scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 6, 8)));
         }
@@ -22,7 +22,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldReturnsOneDateInYear()
         {
-            ISchedule scheduler = new YearlyScheduler(FrequencyPart.None, 1);       
+            ISchedule scheduler = new YearlyScheduler(1);       
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2017, 2, 7));
 
             Assert.AreEqual(1, occurrences.Count());
@@ -38,7 +38,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldReturnsFiveDatesInThirtyFourYearsRangeWithSevenYearsInterval()
         {
-            ISchedule scheduler = new YearlyScheduler(FrequencyPart.None, 7);
+            ISchedule scheduler = new YearlyScheduler(7);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 1, 1), new DateTime(2050, 1, 1));
 
             Assert.AreEqual(5, occurrences.Count());

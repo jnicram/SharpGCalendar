@@ -14,13 +14,13 @@ namespace SharpGCalendar.Scheduler.Tests
         [Test]
         public void ShouldThrowsExceptionDuringSchedulerCreation()
         {
-            Assert.Throws<ArgumentException>(() => new DailyScheduler(FrequencyPart.None, 0));
+            Assert.Throws<ArgumentException>(() => new DailyScheduler(0));
         }
 
         [Test]
         public void ShouldThrowsExceptionWhenIncorrectDatesGiven()
         {
-            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 1);
+            ISchedule scheduler = new DailyScheduler(1);
 
             Assert.Throws<ArgumentException>(() => scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 6, 8)));
         }
@@ -28,7 +28,7 @@ namespace SharpGCalendar.Scheduler.Tests
         [Test]
         public void ShouldReturnsOneDateInOneDayRange()
         {
-            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 1);
+            ISchedule scheduler = new DailyScheduler(1);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 7, 8));
 
             Assert.AreEqual(1, occurrences.Count());
@@ -44,7 +44,7 @@ namespace SharpGCalendar.Scheduler.Tests
         [Test]
         public void ShouldReturnsTwoDatesInTwoDaysRange()
         {
-            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 1);
+            ISchedule scheduler = new DailyScheduler(1);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 7, 9));
 
             Assert.AreEqual(2, occurrences.Count());
@@ -61,7 +61,7 @@ namespace SharpGCalendar.Scheduler.Tests
         [Test]
         public void ShouldReturnsThreeDatesInDaysRangeWithThreeDaysInterval()
         {
-            ISchedule scheduler = new DailyScheduler(FrequencyPart.None, 3);
+            ISchedule scheduler = new DailyScheduler(3);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 7), new DateTime(2016, 7, 15));
 
             Assert.AreEqual(3, occurrences.Count());
