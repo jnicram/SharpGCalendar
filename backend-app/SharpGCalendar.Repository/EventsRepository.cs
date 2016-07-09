@@ -1,4 +1,5 @@
-﻿using SharpGCalendar.Domain.Model;
+﻿using LiteDB;
+using SharpGCalendar.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,45 +8,67 @@ namespace SharpGCalendar.Repository
 {
     public class EventsRepository : IEventsRepository
     {
-        static List<Event> Events = new List<Event>();
+        const string DB_NAME = @"../../data/SharpGCalendar.db";
 
         public void Add(Event item)
         {
-            Events.Add(item);
+            using (var db = new LiteDatabase(DB_NAME))
+            {
+                var events = db.GetCollection<Event>("events");
+                events.Insert(item);               
+            }
         }
 
         public Event Get(int id)
         {
-            return Events
-                .Where(e => e.Id == id)
-                .SingleOrDefault();
+            using (var db = new LiteDatabase(DB_NAME))
+            {
+                var events = db.GetCollection<Event>("events");
+                return events.FindOne(e => e.Id == id);
+            }
         }
 
         public IEnumerable<Event> Find(DateTime startDateTime, DateTime endDateTime)
         {
-            return Events.FindAll(x => x.StartDateTime >= startDateTime && x.EndDateTime < endDateTime);
+            using (var db = new LiteDatabase(DB_NAME))
+            {
+                var events = db.GetCollection<Event>("events");
+
+                // @TODO Problem with Find by date 
+                // return events.Find(e => e.StartDateTime >= startDateTime && e.EndDateTime < endDateTime);
+
+                return events
+                    .FindAll().ToList()
+                    .FindAll(x => x.StartDateTime >= startDateTime && x.EndDateTime < endDateTime);
+            }
         }
 
         public void Remove(int id)
         {
-            var itemToRemove = Events.SingleOrDefault(r => r.Id == id);
-            if (itemToRemove != null)
+            using (var db = new LiteDatabase(DB_NAME))
             {
-                Events.Remove(itemToRemove);
-            }          
+                var events = db.GetCollection<Event>("events");
+                events.Delete(e => e.Id == id);
+            }         
         }
 
         public void Update(Event item)
         {
-            var itemToUpdate = Events.SingleOrDefault(r => r.Id == item.Id);
-            if (itemToUpdate != null)
+            using (var db = new LiteDatabase(DB_NAME))
             {
-                itemToUpdate.Title = item.Title;
-                itemToUpdate.StartDateTime = item.StartDateTime;
-                itemToUpdate.EndDateTime = item.EndDateTime;
-                itemToUpdate.Location = item.Location;
-                itemToUpdate.Description = item.Description;
-                itemToUpdate.Color = item.Color;
+                var events = db.GetCollection<Event>("events");
+                Event itemToUpdate = events.FindOne(e => e.Id == item.Id);
+                if (itemToUpdate != null)
+                {
+                    itemToUpdate.Title = item.Title;
+                    itemToUpdate.StartDateTime = item.StartDateTime;
+                    itemToUpdate.EndDateTime = item.EndDateTime;
+                    itemToUpdate.Location = item.Location;
+                    itemToUpdate.Description = item.Description;
+                    itemToUpdate.Color = item.Color;
+
+                    events.Update(itemToUpdate);
+                }
             }
         }
     }

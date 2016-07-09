@@ -8,6 +8,7 @@
         "bin/Debug/SharpGCalendar.Repository.dll": {}
       },
       "runtime": {
+        "../../packages/LiteDB.1.0.4/lib/net40/LiteDB.dll": {},
         "bin/Debug/SharpGCalendar.Repository.dll": {}
       }
     },
