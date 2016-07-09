@@ -1,5 +1,4 @@
-﻿using SharpGCalendar.Domain;
-using SharpGCalendar.Domain.Model;
+﻿using SharpGCalendar.Domain.Model;
 using System;
 using System.Collections.Generic;
 
@@ -11,9 +10,9 @@ namespace SharpGCalendar.Repository
 
         IEnumerable<Event> Find(DateTime startDateTime, DateTime endDateTim);
 
-        Event Get(string key);
+        Event Get(int id);
 
-        void Remove(string key);
+        void Remove(int id);
 
         void Update(Event item);
     }

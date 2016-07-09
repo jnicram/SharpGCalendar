@@ -6,7 +6,6 @@
         Daily = 1,       
         Weekly = 2,
         Monthly = 4,
-        Yearly = 8,
-        EveryWeekDay = 16
+        Yearly = 8
     }
 }

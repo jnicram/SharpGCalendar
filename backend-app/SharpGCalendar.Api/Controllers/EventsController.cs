@@ -23,7 +23,7 @@ namespace SharpGCalendar.Api.Controllers
         }
 
         [HttpGet("{id}", Name = "GetEvent")]
-        public IActionResult GetById(string id)
+        public IActionResult GetById(int id)
         {
             var item = EventsRepo.Get(id);
             if (item == null)
@@ -41,11 +41,11 @@ namespace SharpGCalendar.Api.Controllers
                 return BadRequest();
             }
             EventsRepo.Add(item);
-            return CreatedAtRoute("GetEvent", new { Controller = "Events", id = item.Key }, item);
+            return CreatedAtRoute("GetEvent", new { Controller = "Events", id = item.Id }, item);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(string id, [FromBody] Event item)
+        public IActionResult Update(int id, [FromBody] Event item)
         {
             if (item == null)
             {
@@ -63,7 +63,7 @@ namespace SharpGCalendar.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public void Delete(string id)
+        public void Delete(int id)
         {
             EventsRepo.Remove(id);
         }

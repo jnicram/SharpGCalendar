@@ -14,10 +14,10 @@ namespace SharpGCalendar.Repository
             Events.Add(item);
         }
 
-        public Event Get(string key)
+        public Event Get(int id)
         {
             return Events
-                .Where(e => e.Key.Equals(key))
+                .Where(e => e.Id == id)
                 .SingleOrDefault();
         }
 
@@ -26,9 +26,9 @@ namespace SharpGCalendar.Repository
             return Events.FindAll(x => x.StartDateTime >= startDateTime && x.EndDateTime < endDateTime);
         }
 
-        public void Remove(string key)
+        public void Remove(int id)
         {
-            var itemToRemove = Events.SingleOrDefault(r => r.Key.Equals(key));
+            var itemToRemove = Events.SingleOrDefault(r => r.Id == id);
             if (itemToRemove != null)
             {
                 Events.Remove(itemToRemove);
@@ -37,7 +37,7 @@ namespace SharpGCalendar.Repository
 
         public void Update(Event item)
         {
-            var itemToUpdate = Events.SingleOrDefault(r => r.Key.Equals(item.Key));
+            var itemToUpdate = Events.SingleOrDefault(r => r.Id == item.Id);
             if (itemToUpdate != null)
             {
                 itemToUpdate.Title = item.Title;
