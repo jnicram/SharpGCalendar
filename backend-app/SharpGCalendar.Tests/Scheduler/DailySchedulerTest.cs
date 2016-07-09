@@ -1,9 +1,8 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using SharpGCalendar.Domain.Scheduler;
-using SharpGCalendar.Domain;
-using System.Linq;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SharpGCalendar.Scheduler.Tests
 {

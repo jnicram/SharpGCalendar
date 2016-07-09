@@ -1,4 +1,4 @@
-﻿namespace SharpGCalendar.Domain
+﻿namespace SharpGCalendar.Domain.Model
 {
     public enum MonthlyRepeatType
     {

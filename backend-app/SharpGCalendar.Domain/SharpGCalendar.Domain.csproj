@@ -60,10 +60,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Color.cs" />
-    <Compile Include="Event.cs" />
-    <Compile Include="Frequency.cs" />
-    <Compile Include="MonthlyRepeatType.cs" />
+    <Compile Include="Model\Color.cs" />
+    <Compile Include="Model\Event.cs" />
+    <Compile Include="Model\Frequency.cs" />
+    <Compile Include="Model\MonthlyRepeatType.cs" />
     <Compile Include="Scheduler\DailyScheduler.cs" />
     <Compile Include="Scheduler\DateTimeExtensions.cs" />
     <Compile Include="Scheduler\ISchedule.cs" />
@@ -72,11 +72,12 @@
     <Compile Include="Scheduler\Scheduler.cs" />
     <Compile Include="Scheduler\WeeklyScheduler.cs" />
     <Compile Include="Scheduler\YearlyScheduler.cs" />
-    <Compile Include="WeeklyRepeatType.cs" />
+    <Compile Include="Model\WeeklyRepeatType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

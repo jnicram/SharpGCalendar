@@ -1,5 +1,4 @@
 ﻿using NUnit.Framework;
-using SharpGCalendar.Domain;
 using SharpGCalendar.Domain.Scheduler;
 using System;
 using System.Collections.Generic;

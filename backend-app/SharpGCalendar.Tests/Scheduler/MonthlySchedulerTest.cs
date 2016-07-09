@@ -1,11 +1,9 @@
 ﻿using NUnit.Framework;
-using SharpGCalendar.Domain;
+using SharpGCalendar.Domain.Model;
 using SharpGCalendar.Domain.Scheduler;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SharpGCalendar.Tests.Scheduler
 {

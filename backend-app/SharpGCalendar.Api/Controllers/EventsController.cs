@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using SharpGCalendar.Domain.Model;
 using SharpGCalendar.Repository;
-using SharpGCalendar.Domain;
 using System;
+using System.Collections.Generic;
 
 namespace SharpGCalendar.Api.Controllers
 {

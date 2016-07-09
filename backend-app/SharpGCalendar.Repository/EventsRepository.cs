@@ -1,4 +1,4 @@
-﻿using SharpGCalendar.Domain;
+﻿using SharpGCalendar.Domain.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
