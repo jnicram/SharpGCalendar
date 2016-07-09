@@ -63,7 +63,7 @@
     <Compile Include="Color.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="Frequency.cs" />
-    <Compile Include="RepeatFrequency.cs" />
+    <Compile Include="MonthlyRepeatType.cs" />
     <Compile Include="Scheduler\DailyScheduler.cs" />
     <Compile Include="Scheduler\DateTimeExtensions.cs" />
     <Compile Include="Scheduler\ISchedule.cs" />
@@ -72,6 +72,7 @@
     <Compile Include="Scheduler\Scheduler.cs" />
     <Compile Include="Scheduler\WeeklyScheduler.cs" />
     <Compile Include="Scheduler\YearlyScheduler.cs" />
+    <Compile Include="WeeklyRepeatType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

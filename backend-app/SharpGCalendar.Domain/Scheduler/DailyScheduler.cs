@@ -6,7 +6,7 @@ namespace SharpGCalendar.Domain.Scheduler
 {
     public class DailyScheduler : Scheduler
     {
-        public DailyScheduler(int interval) : base(RepeatFrequency.None, interval)
+        public DailyScheduler(int interval) : base(interval)
         {
         }
 

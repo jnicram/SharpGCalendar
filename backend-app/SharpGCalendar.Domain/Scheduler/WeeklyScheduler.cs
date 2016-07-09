@@ -6,12 +6,11 @@ namespace SharpGCalendar.Domain.Scheduler
 {
     public class WeeklyScheduler : Scheduler
     {
-        public WeeklyScheduler(int interval) : this(RepeatFrequency.None, interval)
-        {
-        }
+        private WeeklyRepeatType repeatFrequency;
 
-        public WeeklyScheduler(RepeatFrequency repeatFrequency, int interval) : base(repeatFrequency, interval)
+        public WeeklyScheduler(WeeklyRepeatType repeatFrequency, int interval) : base(interval)
         {
+            this.repeatFrequency = repeatFrequency;
         }
 
         public override IEnumerable<DateTime> GetOccurrences(DateTime startDate, DateTime endDate)
@@ -20,15 +19,14 @@ namespace SharpGCalendar.Domain.Scheduler
 
             IEnumerable<DateTime> occurrences = new List<DateTime>();
 
-            switch (repeatFrequency)
+            if (repeatFrequency == WeeklyRepeatType.None)
             {
-                case RepeatFrequency.None:
-                    occurrences = DetermineOccurences(startDate, endDate);
-                    break;
-                default:
-                    occurrences = DetermineOccurencesWithRepeatingFrequency(startDate, endDate);
-                    break;
+                occurrences = DetermineOccurences(startDate, endDate);
             }
+            else
+            {
+                occurrences = DetermineOccurencesWithRepeatingFrequency(startDate, endDate);
+            }          
 
             return occurrences;
         }
@@ -66,37 +64,37 @@ namespace SharpGCalendar.Domain.Scheduler
         {
             List<DayOfWeek> daysOfWeek = new List<DayOfWeek>();
 
-            if ((repeatFrequency & RepeatFrequency.Monday) == RepeatFrequency.Monday)
+            if ((repeatFrequency & WeeklyRepeatType.Monday) == WeeklyRepeatType.Monday)
             {
                 daysOfWeek.Add(DayOfWeek.Monday);
             }
 
-            if ((repeatFrequency & RepeatFrequency.Tuesday) == RepeatFrequency.Tuesday)
+            if ((repeatFrequency & WeeklyRepeatType.Tuesday) == WeeklyRepeatType.Tuesday)
             {
                 daysOfWeek.Add(DayOfWeek.Tuesday);
             }
 
-            if ((repeatFrequency & RepeatFrequency.Wednesday) == RepeatFrequency.Wednesday)
+            if ((repeatFrequency & WeeklyRepeatType.Wednesday) == WeeklyRepeatType.Wednesday)
             {
                 daysOfWeek.Add(DayOfWeek.Wednesday);
             }
 
-            if ((repeatFrequency & RepeatFrequency.Thursday) == RepeatFrequency.Thursday)
+            if ((repeatFrequency & WeeklyRepeatType.Thursday) == WeeklyRepeatType.Thursday)
             {
                 daysOfWeek.Add(DayOfWeek.Thursday);
             }
 
-            if ((repeatFrequency & RepeatFrequency.Friday) == RepeatFrequency.Friday)
+            if ((repeatFrequency & WeeklyRepeatType.Friday) == WeeklyRepeatType.Friday)
             {
                 daysOfWeek.Add(DayOfWeek.Friday);
             }
 
-            if ((repeatFrequency & RepeatFrequency.Saturday) == RepeatFrequency.Saturday)
+            if ((repeatFrequency & WeeklyRepeatType.Saturday) == WeeklyRepeatType.Saturday)
             {
                 daysOfWeek.Add(DayOfWeek.Saturday);
             }
 
-            if ((repeatFrequency & RepeatFrequency.Sunday) == RepeatFrequency.Sunday)
+            if ((repeatFrequency & WeeklyRepeatType.Sunday) == WeeklyRepeatType.Sunday)
             {
                 daysOfWeek.Add(DayOfWeek.Sunday);
             }

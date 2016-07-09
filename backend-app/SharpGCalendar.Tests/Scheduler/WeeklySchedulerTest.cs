@@ -14,7 +14,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldReturnsProperNumberOfOccurrencesWhenRepeatFrequencyIsNone()
         {
-            ISchedule scheduler = new WeeklyScheduler(1);        
+            ISchedule scheduler = new WeeklyScheduler(WeeklyRepeatType.None, 1);        
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 6, 1), new DateTime(2016, 6, 30));
 
             Assert.AreEqual(5, occurrences.Count());
@@ -34,7 +34,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldReturnsOnlyOneElementWhenRangeIsSmallerThanInterval()
         {
-            ISchedule scheduler = new WeeklyScheduler(1);
+            ISchedule scheduler = new WeeklyScheduler(WeeklyRepeatType.None, 1);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 1), new DateTime(2016, 7, 5));
 
             Assert.AreEqual(1, occurrences.Count());
@@ -50,7 +50,7 @@ namespace SharpGCalendar.Tests.Scheduler
         [Test]
         public void ShouldReturnsProperNumberOfOccurrencesWhenRepeatFrequencyIsTuesdayAndWednesday()
         {
-            ISchedule scheduler = new WeeklyScheduler(RepeatFrequency.Tuesday | RepeatFrequency.Wednesday, 2);
+            ISchedule scheduler = new WeeklyScheduler(WeeklyRepeatType.Tuesday | WeeklyRepeatType.Wednesday, 2);
             IEnumerable<DateTime> occurrences = scheduler.GetOccurrences(new DateTime(2016, 7, 1), new DateTime(2016, 8, 1)).OrderBy(o => o);
 
             Assert.AreEqual(4, occurrences.Count());

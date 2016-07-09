@@ -6,8 +6,11 @@ namespace SharpGCalendar.Domain.Scheduler
 {
     public class MonthlyScheduler : Scheduler
     {
-        public MonthlyScheduler(RepeatFrequency repeatFrequency, int interval) : base(repeatFrequency, interval)
+        private MonthlyRepeatType repeatFrequency;
+
+        public MonthlyScheduler(MonthlyRepeatType repeatFrequency, int interval) : base(interval)
         {
+            this.repeatFrequency = repeatFrequency;
         }
 
         public override IEnumerable<DateTime> GetOccurrences(DateTime startDate, DateTime endDate)
@@ -18,10 +21,10 @@ namespace SharpGCalendar.Domain.Scheduler
 
             switch (repeatFrequency)
             {
-                case RepeatFrequency.DayOfWeek:
+                case MonthlyRepeatType.DayOfWeek:
                     occurrences = DetermineOccurencesWithDayOfWeekRepeating(startDate, endDate);
                     break;
-                default:
+                case MonthlyRepeatType.DayOfMonth:
                     occurrences = DetermineOccurencesWithDayOfMonthRepeating(startDate, endDate);
                     break;
             }

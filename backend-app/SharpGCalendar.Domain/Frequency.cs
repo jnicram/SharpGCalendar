@@ -2,11 +2,11 @@
 {
     public enum Frequency
     {
-        Once,
-        Daily,
-        EveryWeekday,
-        Weekly,
-        Monthly,
-        Yearly
+        None = 0,
+        Daily = 1,       
+        Weekly = 2,
+        Monthly = 4,
+        Yearly = 8,
+        EveryWeekDay = 16
     }
 }

@@ -3,7 +3,7 @@
 namespace SharpGCalendar.Domain
 {
     [Flags]
-    public enum RepeatFrequency
+    public enum WeeklyRepeatType
     {
         None = 0,
         Monday = 1,
@@ -12,8 +12,6 @@ namespace SharpGCalendar.Domain
         Thursday = 8,
         Friday = 16,
         Saturday = 32,
-        Sunday = 64,
-        DayOfMonth = 128,
-        DayOfWeek = 256
+        Sunday = 64
     }
 }
