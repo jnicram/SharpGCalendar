@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventDto.cs" />
     <Compile Include="Model\Color.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Frequency.cs" />

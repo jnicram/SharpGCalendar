@@ -22,7 +22,7 @@
   "frameworks": {
     "net452": {
       "dependencies": {
-        "SharpGCalendar.Repository": {
+        "SharpGCalendar.Service": {
           "target": "project"
         }
       }

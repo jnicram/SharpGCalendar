@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('mwl.calendar.docs')
+        .module('sharpGCalendar')
         .factory('alert', function ($uibModal) {
 
             function show(action, event) {

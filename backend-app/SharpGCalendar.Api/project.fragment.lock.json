@@ -1,15 +1,14 @@
 {
   "version": 2,
   "exports": {
-    "SharpGCalendar.Repository/1.0.0": {
+    "SharpGCalendar.Service/1.0.0": {
       "type": "project",
       "framework": ".NETFramework,Version=v4.5.2",
       "compile": {
-        "bin/Debug/SharpGCalendar.Repository.dll": {}
+        "bin/Debug/SharpGCalendar.Service.dll": {}
       },
       "runtime": {
-        "../../packages/LiteDB.1.0.4/lib/net40/LiteDB.dll": {},
-        "bin/Debug/SharpGCalendar.Repository.dll": {}
+        "bin/Debug/SharpGCalendar.Service.dll": {}
       }
     },
     "SharpGCalendar.Domain/1.0.0": {
@@ -25,6 +24,17 @@
         "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.RegistrationByConvention.dll": {},
         "../../packages/Unity.4.0.1/lib/net45/Microsoft.Practices.Unity.dll": {},
         "bin/Debug/SharpGCalendar.Domain.dll": {}
+      }
+    },
+    "SharpGCalendar.Repository/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/SharpGCalendar.Repository.dll": {}
+      },
+      "runtime": {
+        "../../packages/LiteDB.1.0.4/lib/net40/LiteDB.dll": {},
+        "bin/Debug/SharpGCalendar.Repository.dll": {}
       }
     }
   }

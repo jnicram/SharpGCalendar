@@ -1,9 +1,9 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('mwl.calendar.docs', ['mwl.calendar', 'ngAnimate', 'ui.bootstrap']);
+    angular.module('sharpGCalendar', ['mwl.calendar', 'ngAnimate', 'ui.bootstrap']);
     angular
-      .module('mwl.calendar.docs') //you will need to declare your module with the dependencies ['mwl.calendar', 'ui.bootstrap', 'ngAnimate']
+      .module('sharpGCalendar')
       .controller('KitchenSinkCtrl', function (moment, alert) {
 
           var vm = this;
@@ -60,8 +60,5 @@
               $event.stopPropagation();
               event[field] = !event[field];
           };
-
       });
-
-
 })();

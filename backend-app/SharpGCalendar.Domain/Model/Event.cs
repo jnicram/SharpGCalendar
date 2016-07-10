@@ -57,6 +57,25 @@ namespace SharpGCalendar.Domain.Model
             return occurrences;
         }
 
+        public EventDto Convert()
+        {
+            return new EventDto()
+            {
+                Id = Id,
+                Title = Title,
+                Description = Description,
+                EndDateTime = EndDateTime,
+                StartDateTime = StartDateTime,
+                SeriesEndDate = SeriesEndDate,
+                FrequencyInterval = FrequencyInterval,
+                Location = Location,
+                Color = (int) Color,
+                FrequencyType = (int) FrequencyType,
+                MonthlyRepeatType = (int) MonthlyRepeatType,
+                WeeklyRepeatType = (int) WeeklyRepeatType
+            };
+        }
+
         public object Clone()
         {
             return MemberwiseClone();

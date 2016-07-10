@@ -10,12 +10,14 @@ namespace SharpGCalendar.Repository
     {
         const string DB_NAME = @"../../data/SharpGCalendar.db";
 
-        public void Add(Event item)
+        public Event Add(Event item)
         {
             using (var db = new LiteDatabase(DB_NAME))
             {
                 var events = db.GetCollection<Event>("events");
-                events.Insert(item);               
+                events.Insert(item);
+
+                return item;               
             }
         }
 
@@ -52,7 +54,7 @@ namespace SharpGCalendar.Repository
             }         
         }
 
-        public void Update(Event item)
+        public Event Update(Event item)
         {
             using (var db = new LiteDatabase(DB_NAME))
             {
@@ -69,6 +71,8 @@ namespace SharpGCalendar.Repository
 
                     events.Update(itemToUpdate);
                 }
+
+                return itemToUpdate;
             }
         }
     }

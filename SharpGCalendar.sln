@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpGCalendar.Web", "front
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend-app", "frontend-app", "{D4B3E934-75C8-414D-B5DC-28D7AA0D36F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpGCalendar.Service", "backend-app\SharpGCalendar.Service\SharpGCalendar.Service.csproj", "{71852531-446D-4EEE-91E1-25AB1F640B8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{950615CE-F029-4652-8F37-351AD9E021BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{950615CE-F029-4652-8F37-351AD9E021BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{950615CE-F029-4652-8F37-351AD9E021BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71852531-446D-4EEE-91E1-25AB1F640B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71852531-446D-4EEE-91E1-25AB1F640B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71852531-446D-4EEE-91E1-25AB1F640B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71852531-446D-4EEE-91E1-25AB1F640B8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{58705634-76BC-454B-9B40-07D4A8AF02E0} = {AC91A2EA-241C-4CD4-9EBF-AD1044DDC8D1}
 		{4C3D24E0-8F12-4C6A-9006-F5ECF490996B} = {AC91A2EA-241C-4CD4-9EBF-AD1044DDC8D1}
 		{950615CE-F029-4652-8F37-351AD9E021BD} = {D4B3E934-75C8-414D-B5DC-28D7AA0D36F5}
+		{71852531-446D-4EEE-91E1-25AB1F640B8E} = {AC91A2EA-241C-4CD4-9EBF-AD1044DDC8D1}
 	EndGlobalSection
 EndGlobal

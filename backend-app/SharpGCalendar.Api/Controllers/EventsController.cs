@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using SharpGCalendar.Domain.Model;
-using SharpGCalendar.Repository;
+using SharpGCalendar.Domain;
+using SharpGCalendar.Service;
 using System;
 using System.Collections.Generic;
 
@@ -9,23 +9,23 @@ namespace SharpGCalendar.Api.Controllers
     [Route("api/[controller]")]
     public class EventsController : Controller
     {
-        public IEventsRepository EventsRepo { get; set; }
+        private IEventsService eventsService;
 
-        public EventsController(IEventsRepository _repo)
+        public EventsController(IEventsService service)
         {
-            EventsRepo = _repo;
+            eventsService = service;
         }
 
         [HttpGet]
-        public IEnumerable<Event> GetAll()
+        public IEnumerable<EventDto> GetAll()
         {
-            return EventsRepo.Find(DateTime.Today, DateTime.Today.AddDays(1));
+            return eventsService.Find(DateTime.Today, DateTime.Today.AddDays(1));
         }
 
         [HttpGet("{id}", Name = "GetEvent")]
         public IActionResult GetById(int id)
         {
-            var item = EventsRepo.Get(id);
+            EventDto item = eventsService.GetById(id);
             if (item == null)
             {
                 return NotFound();
@@ -34,38 +34,33 @@ namespace SharpGCalendar.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] Event item)
+        public IActionResult Create([FromBody] EventDto item)
         {
             if (item == null)
             {
                 return BadRequest();
             }
-            EventsRepo.Add(item);
-            return CreatedAtRoute("GetEvent", new { Controller = "Events", id = item.Id }, item);
+            EventDto createdEvent = eventsService.Create(item);
+
+            return CreatedAtRoute("GetEvent", new { Controller = "Events", id = createdEvent.Id }, createdEvent);
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id, [FromBody] Event item)
+        public IActionResult Update(int id, [FromBody] EventDto item)
         {
-            if (item == null)
-            {
-                return BadRequest();
-            }
-
-            var eventItem = EventsRepo.Get(id);
+            EventDto eventItem = eventsService.Update(item);
             if (eventItem == null)
             {
                 return NotFound();
             }
 
-            EventsRepo.Update(item);
             return new NoContentResult();
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            EventsRepo.Remove(id);
+            eventsService.Delete(id);
         }
     }
 }
